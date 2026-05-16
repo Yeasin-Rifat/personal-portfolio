@@ -45,10 +45,26 @@ public class SecurityConfig {
 
                         .requestMatchers(
                                 "/api/projects/**"
-                        ).authenticated()
+                        ).permitAll()
+
+                        .requestMatchers(
+                                "/api/skills/**"
+                        ).permitAll()
+
+                        .requestMatchers(
+                                "/api/experiences/**"
+                        ).permitAll()
+
+                        .requestMatchers(
+                                "/api/profile/**"
+                        ).permitAll()
+
+                        .requestMatchers(
+                                "/api/contacts"
+                        ).permitAll()
 
                         .anyRequest()
-                        .permitAll()
+                        .authenticated()
                 )
                 .addFilterBefore(
                         jwtAuthenticationFilter,
