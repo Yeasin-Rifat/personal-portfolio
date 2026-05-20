@@ -65,6 +65,22 @@
         </a>
       </li>
 
+      <li
+        class="nav-item"
+        *ngIf="isLoggedIn()"
+      >
+
+        <button
+          class="btn btn-danger ms-3"
+          (click)="logout()"
+        >
+
+          Logout
+
+        </button>
+
+      </li>
+
     </ul>
 
   </div>

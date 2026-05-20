@@ -10,6 +10,9 @@ import { ExperienceComponent } from './features/public/experience/experience.com
 import { ContactComponent } from './features/public/contact/contact.component';
 
 import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
+import {AuthGuard} from "./core/guards/auth.guard";
+import {ProjectListComponent} from "./features/admin/project/project-list/project-list.component";
+import {ProjectFormComponent} from "./features/admin/project/project-form/project-form.component";
 
 const routes: Routes = [
 
@@ -45,7 +48,26 @@ const routes: Routes = [
 
   {
     path: 'admin/dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'admin/projects',
+    component: ProjectListComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'admin/projects/create',
+    component: ProjectFormComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'admin/projects/edit/:id',
+    component: ProjectFormComponent,
+    canActivate: [AuthGuard]
   },
 
   {

@@ -1,1 +1,56 @@
-<p>skills works!</p>
+<div class="container py-5">
+
+  <h1 class="text-center mb-5">
+    My Skills
+  </h1>
+
+  <div class="row">
+
+    <div
+      class="col-md-6 mb-4"
+      *ngFor="let skill of skills"
+    >
+
+      <div class="card p-4">
+
+        <div
+          class="d-flex justify-content-between mb-2"
+        >
+
+          <h5 class="text-dark">
+            {{ skill.name }}
+          </h5>
+
+          <span class="text-dark">
+            {{ skill.percentage }}%
+          </span>
+
+        </div>
+
+        <div class="progress">
+
+          <div
+            class="progress-bar"
+            role="progressbar"
+            [style.width.%]="skill.percentage"
+          >
+
+            {{ skill.percentage }}%
+
+          </div>
+
+        </div>
+
+        <small class="mt-2 text-muted">
+
+          {{ skill.category }}
+
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -11,12 +11,17 @@ import { ContactComponent } from './features/public/contact/contact.component';
 import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
 import { SkillsComponent } from './features/public/skills/skills.component';
 import { ProfileComponent } from './features/admin/profile/profile.component';
-import { ContactsComponent } from './features/admin/contacts/contacts.component';
+// import { ContactsComponent } from './features/admin/contacts/contacts.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import { LoginComponentTsComponent } from './src/app/features/auth/login/login.component.ts/login.component.ts.component';
+import { FormsModule } from "@angular/forms";
+import { JwtInterceptor } from "./core/interceptors/jwt.interceptor";
+import { ProjectListComponent } from './features/admin/project/project-list/project-list.component';
+import { ProjectFormComponent } from './features/admin/project/project-form/project-form.component';
 
 @NgModule({
   declarations: [
@@ -29,18 +34,28 @@ import {CommonModule} from "@angular/common";
     DashboardComponent,
     SkillsComponent,
     ProfileComponent,
-    ContactsComponent,
+    // ContactsComponent,
     NavbarComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponentTsComponent,
+    ProjectListComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
