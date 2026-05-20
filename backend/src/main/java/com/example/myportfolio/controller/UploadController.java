@@ -5,8 +5,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.UUID;
 
 @RestController
@@ -14,35 +16,27 @@ import java.util.UUID;
 public class UploadController {
 
     private static final String UPLOAD_DIR =
-            "uploads/";
+            "G:/WorkPlace/my-portfolio/uploads/";
 
     @PostMapping(
-            consumes =
-                    MediaType.MULTIPART_FORM_DATA_VALUE
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
     public ImageUploadResponseDTO uploadImage(
             @RequestParam("file")
             MultipartFile file
     ) throws IOException {
 
-        File directory =
-                new File(UPLOAD_DIR);
-
-        if (!directory.exists()) {
-
-            directory.mkdirs();
-        }
-
         String fileName =
                 UUID.randomUUID()
                         + "_"
                         + file.getOriginalFilename();
 
-        String filePath =
-                UPLOAD_DIR + fileName;
-
-        file.transferTo(
-                new File(filePath)
+        Files.copy(
+                file.getInputStream(),
+                Paths.get(
+                        UPLOAD_DIR + fileName
+                ),
+                StandardCopyOption.REPLACE_EXISTING
         );
 
         String imageUrl =

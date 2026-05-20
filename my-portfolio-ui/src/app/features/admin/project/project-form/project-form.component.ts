@@ -1,16 +1,10 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {
-  ActivatedRoute,
-  Router
-} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
-import {
-  ProjectService
-} from 'src/app/core/services/project.service';
+import { ProjectService } from 'src/app/core/services/project.service';
+
+import { UploadService } from 'src/app/core/services/upload.service';
 
 @Component({
   selector: 'app-project-form',
@@ -44,7 +38,9 @@ export class ProjectFormComponent
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
+    private uploadService: UploadService,
     private router: Router
+
   ) { }
 
   ngOnInit(): void {
@@ -113,6 +109,40 @@ export class ProjectFormComponent
         });
     }
 
+  }
+
+  onFileSelected(event: any): void {
+
+    const file = event.target.files[0];
+
+    if (file) {
+
+      const formData = new FormData();
+
+      formData.append('file', file);
+
+      this.uploadService
+        .uploadImage(formData)
+        .subscribe({
+
+          next: (response) => {
+
+            console.log(response);
+
+            this.project.imageUrl =
+              response.imageUrl;
+
+            console.log(
+              this.project.imageUrl
+            );
+          },
+
+          error: (error) => {
+
+            console.log(error);
+          }
+        });
+    }
   }
 
 }

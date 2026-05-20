@@ -53,10 +53,23 @@
       </label>
 
       <input
-        type="text"
+        type="file"
         class="form-control"
-        [(ngModel)]="project.imageUrl"
+        (change)="onFileSelected($event)"
       >
+
+      <div
+        *ngIf="project.imageUrl"
+        class="mt-3"
+      >
+
+        <img
+          [src]="project.imageUrl"
+          class="img-fluid rounded"
+          width="300"
+        >
+
+      </div>
 
     </div>
 

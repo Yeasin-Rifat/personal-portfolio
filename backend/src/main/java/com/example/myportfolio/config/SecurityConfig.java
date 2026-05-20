@@ -31,12 +31,15 @@ public class SecurityConfig {
     ) throws Exception {
 
         http
+                .cors(cors -> {})
                 .csrf(csrf -> csrf.disable())
+
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
                                 SessionCreationPolicy.STATELESS
                         )
                 )
+
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers(
@@ -60,7 +63,7 @@ public class SecurityConfig {
                         ).permitAll()
 
                         .requestMatchers(
-                                "/api/contacts"
+                                "/api/contacts/**"
                         ).permitAll()
 
                         .requestMatchers(
@@ -69,11 +72,12 @@ public class SecurityConfig {
 
                         .requestMatchers(
                                 "/api/upload/**"
-                        ).authenticated()
+                        ).permitAll()
 
                         .anyRequest()
                         .authenticated()
                 )
+
                 .addFilterBefore(
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class

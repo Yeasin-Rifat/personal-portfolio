@@ -17,7 +17,7 @@ public class FileConfig
                         "/uploads/**"
                 )
                 .addResourceLocations(
-                        "file:uploads/"
+                        "file:///G:/WorkPlace/my-portfolio/uploads/"
                 );
     }
 }
