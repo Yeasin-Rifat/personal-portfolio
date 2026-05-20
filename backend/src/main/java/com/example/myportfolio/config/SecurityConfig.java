@@ -63,6 +63,14 @@ public class SecurityConfig {
                                 "/api/contacts"
                         ).permitAll()
 
+                        .requestMatchers(
+                                "/uploads/**"
+                        ).permitAll()
+
+                        .requestMatchers(
+                                "/api/upload/**"
+                        ).authenticated()
+
                         .anyRequest()
                         .authenticated()
                 )
