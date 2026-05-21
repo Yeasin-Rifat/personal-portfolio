@@ -17,6 +17,8 @@ import {AdminLayoutComponent} from "./features/admin/admin-layout/admin-layout.c
 import {AuthGuard} from "./core/guards/auth.guard";
 import {ExperienceFormComponent} from "./features/admin/pages/experience/experience-form/experience-form.component";
 import {ExperienceListComponent} from "./features/admin/pages/experience/experience-list/experience-list.component";
+import {SkillListComponent} from "./features/admin/pages/skill/skill-list/skill-list.component";
+import {SkillFormComponent} from "./features/admin/pages/skill/skill-form/skill-form.component";
 
 const routes: Routes = [
 
@@ -67,6 +69,10 @@ const routes: Routes = [
       { path: 'experience', component: ExperienceListComponent },
       { path: 'experience/create', component: ExperienceFormComponent },
       { path: 'experience/edit/:id', component: ExperienceFormComponent },
+
+      { path: 'skills', component: SkillListComponent },
+      { path: 'skills/create', component: SkillFormComponent },
+      { path: 'skills/edit/:id', component: SkillFormComponent },
 
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]

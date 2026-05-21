@@ -28,6 +28,8 @@ import {NavbarComponent} from "./layout/navbar/navbar.component";
 import { HeaderComponent } from './features/admin/header/header.component';
 import { ExperienceListComponent } from './features/admin/pages/experience/experience-list/experience-list.component';
 import { ExperienceFormComponent } from './features/admin/pages/experience/experience-form/experience-form.component';
+import { SkillListComponent } from './features/admin/pages/skill/skill-list/skill-list.component';
+import { SkillFormComponent } from './features/admin/pages/skill/skill-form/skill-form.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ExperienceFormComponent } from './features/admin/pages/experience/exper
     ExperienceFormComponent,
     HeaderComponent,
     ExperienceListComponent,
-    ExperienceFormComponent
+    ExperienceFormComponent,
+    SkillListComponent,
+    SkillFormComponent
   ],
   imports: [
     BrowserModule,
