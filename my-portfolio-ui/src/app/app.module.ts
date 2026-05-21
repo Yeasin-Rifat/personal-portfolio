@@ -30,6 +30,7 @@ import { ExperienceListComponent } from './features/admin/pages/experience/exper
 import { ExperienceFormComponent } from './features/admin/pages/experience/experience-form/experience-form.component';
 import { SkillListComponent } from './features/admin/pages/skill/skill-list/skill-list.component';
 import { SkillFormComponent } from './features/admin/pages/skill/skill-form/skill-form.component';
+import { ContactListComponent } from './features/admin/pages/contact/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SkillFormComponent } from './features/admin/pages/skill/skill-form/skil
     ExperienceListComponent,
     ExperienceFormComponent,
     SkillListComponent,
-    SkillFormComponent
+    SkillFormComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

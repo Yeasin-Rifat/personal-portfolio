@@ -19,6 +19,7 @@ import {ExperienceFormComponent} from "./features/admin/pages/experience/experie
 import {ExperienceListComponent} from "./features/admin/pages/experience/experience-list/experience-list.component";
 import {SkillListComponent} from "./features/admin/pages/skill/skill-list/skill-list.component";
 import {SkillFormComponent} from "./features/admin/pages/skill/skill-form/skill-form.component";
+import {ContactListComponent} from "./features/admin/pages/contact/contact-list/contact-list.component";
 
 const routes: Routes = [
 
@@ -73,6 +74,8 @@ const routes: Routes = [
       { path: 'skills', component: SkillListComponent },
       { path: 'skills/create', component: SkillFormComponent },
       { path: 'skills/edit/:id', component: SkillFormComponent },
+
+      { path: 'contacts', component: ContactListComponent },
 
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]

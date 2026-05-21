@@ -1,0 +1,44 @@
+.hero-section {
+
+  background:
+    linear-gradient(
+      to right,
+      #f8f9fa,
+      #ffffff
+    );
+
+}
+
+.hero-image {
+
+  width: 400px;
+
+  height: 400px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 8px solid #212529;
+
+  box-shadow:
+    0 10px 40px rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+
+}
+
+h1 {
+
+  color: #212529;
+
+}
+
+.lead {
+
+  line-height: 1.8;
+
+}

@@ -1,1 +1,68 @@
-<p>contact works!</p>
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-7">
+
+      <div class="card p-4 shadow-lg">
+
+        <h2 class="text-center mb-4">Contact Me</h2>
+
+        <!-- NAME -->
+        <input
+          type="text"
+          class="form-control mb-2"
+          placeholder="Your Name"
+          [(ngModel)]="contactForm.name"
+        >
+
+        <!-- EMAIL -->
+        <input
+          type="email"
+          class="form-control mb-2"
+          placeholder="Your Email"
+          [(ngModel)]="contactForm.email"
+        >
+
+        <!-- SUBJECT -->
+        <input
+          type="text"
+          class="form-control mb-2"
+          placeholder="Subject"
+          [(ngModel)]="contactForm.subject"
+        >
+
+        <!-- MESSAGE -->
+        <textarea
+          rows="5"
+          class="form-control mb-2"
+          placeholder="Message"
+          [(ngModel)]="contactForm.message"
+        ></textarea>
+
+        <!-- BUTTON -->
+        <button
+          class="btn btn-dark w-100"
+          (click)="sendMessage()"
+          [disabled]="isSending"
+        >
+          {{ isSending ? 'Sending...' : 'Send Message 🚀' }}
+        </button>
+
+        <!-- SUCCESS -->
+        <p class="text-success text-center mt-3" *ngIf="successMessage">
+          {{ successMessage }}
+        </p>
+
+        <!-- ERROR -->
+        <p class="text-danger text-center mt-3" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

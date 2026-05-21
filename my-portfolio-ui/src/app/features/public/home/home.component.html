@@ -1,1 +1,91 @@
-<p>home works!</p>
+<div
+  class="hero-section"
+  *ngIf="!isLoading && profile"
+>
+
+  <div class="container">
+
+    <div class="row align-items-center min-vh-100">
+
+      <!-- Left Side -->
+
+      <div class="col-lg-6">
+
+        <span class="badge bg-dark mb-3 px-3 py-2">
+
+          Welcome To My Portfolio
+
+        </span>
+
+        <h1 class="display-3 fw-bold mb-3">
+
+          {{ profile.fullName }}
+
+        </h1>
+
+        <h3 class="text-secondary mb-4">
+
+          {{ profile.title }}
+
+        </h3>
+
+        <p class="lead text-muted mb-4">
+
+          {{ profile.bio }}
+
+        </p>
+
+        <!-- Buttons -->
+
+        <div class="d-flex gap-3 flex-wrap">
+
+          <a
+            [href]="profile.githubLink"
+            target="_blank"
+            class="btn btn-dark btn-lg"
+          >
+
+            Github
+
+          </a>
+
+          <a
+            [href]="profile.linkedinLink"
+            target="_blank"
+            class="btn btn-outline-dark btn-lg"
+          >
+
+            LinkedIn
+
+          </a>
+
+          <a
+            [href]="profile.resumeUrl"
+            target="_blank"
+            class="btn btn-primary btn-lg"
+          >
+
+            Resume
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Right Side -->
+
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+        <img
+          [src]="profile.profileImage"
+          class="hero-image img-fluid"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,21 +1,59 @@
-.menu {
+.sidebar {
+
+  width: 260px;
+
+  min-height: 100vh;
+
+  background: #111827;
+
+  padding: 30px 20px;
+
   display: flex;
+
   flex-direction: column;
-  padding: 10px;
+
+  gap: 10px;
+
 }
 
-.menu a {
-  padding: 10px;
+.logo {
+
   color: white;
+
+  margin-bottom: 30px;
+
+  font-weight: 700;
+
+}
+
+.sidebar a {
+
   text-decoration: none;
-  border-radius: 6px;
-  margin-bottom: 5px;
+
+  color: #d1d5db;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  transition: 0.3s;
+
+  font-weight: 500;
+
 }
 
-.menu a:hover {
-  background: #374151;
+.sidebar a:hover {
+
+  background: #1f2937;
+
+  color: white;
+
 }
 
-.active {
+.sidebar a.active {
+
   background: #2563eb;
+
+  color: white;
+
 }

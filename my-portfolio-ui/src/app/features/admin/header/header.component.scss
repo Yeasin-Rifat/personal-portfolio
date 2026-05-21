@@ -1,0 +1,66 @@
+.admin-header {
+
+  height: 75px;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+}
+
+/* TITLE */
+
+.header-left h2 {
+
+  margin: 0;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+}
+
+/* BUTTON */
+
+.logout-btn {
+
+  background: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+.logout-btn:hover {
+
+  background: #dc2626;
+
+}

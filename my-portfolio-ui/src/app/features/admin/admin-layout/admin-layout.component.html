@@ -1,18 +1,24 @@
-<div class="admin-wrapper">
+<div class="admin-layout">
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
+
   <app-sidebar></app-sidebar>
 
-  <!-- Main Area -->
-  <div class="admin-main">
+  <!-- RIGHT SIDE -->
 
-    <!-- Header -->
+  <div class="admin-right">
+
+    <!-- HEADER -->
+
     <app-header></app-header>
 
-    <!-- Page Content -->
-    <div class="admin-content">
+    <!-- PAGE CONTENT -->
+
+    <main class="admin-content">
+
       <router-outlet></router-outlet>
-    </div>
+
+    </main>
 
   </div>
 
