@@ -1,6 +1,6 @@
 export interface Experience {
 
-  id: number;
+  id?: number;
 
   companyName: string;
 

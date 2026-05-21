@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import {
+  HttpClient
+} from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import {
+  Observable
+} from 'rxjs';
 
-import { environment } from 'src/environments/environment';
+import {
+  environment
+} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +26,53 @@ export class ExperienceService {
 
   getExperiences(): Observable<any> {
 
-    return this.http.get(this.apiUrl);
+    return this.http.get(
+      this.apiUrl
+    );
+
+  }
+
+  getExperienceById(
+    id: number
+  ): Observable<any> {
+
+    return this.http.get(
+      `${this.apiUrl}/${id}`
+    );
+
+  }
+
+  createExperience(
+    experience: any
+  ): Observable<any> {
+
+    return this.http.post(
+      this.apiUrl,
+      experience
+    );
+
+  }
+
+  updateExperience(
+    id: number,
+    experience: any
+  ): Observable<any> {
+
+    return this.http.put(
+      `${this.apiUrl}/${id}`,
+      experience
+    );
+
+  }
+
+  deleteExperience(
+    id: number
+  ): Observable<any> {
+
+    return this.http.delete(
+      `${this.apiUrl}/${id}`
+    );
+
   }
 
 }

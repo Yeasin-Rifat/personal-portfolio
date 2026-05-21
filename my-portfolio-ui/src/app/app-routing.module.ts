@@ -9,10 +9,14 @@ import { SkillsComponent } from './features/public/skills/skills.component';
 import { ExperienceComponent } from './features/public/experience/experience.component';
 import { ContactComponent } from './features/public/contact/contact.component';
 
-import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
+import {DashboardComponent} from "./features/admin/pages/dashboard/dashboard.component";
+import {ProjectListComponent} from "./features/admin/pages/project/project-list/project-list.component";
+import {ProjectFormComponent} from "./features/admin/pages/project/project-form/project-form.component";
+import {ProfileComponent} from "./features/admin/pages/profile/profile.component";
+import {AdminLayoutComponent} from "./features/admin/admin-layout/admin-layout.component";
 import {AuthGuard} from "./core/guards/auth.guard";
-import {ProjectListComponent} from "./features/admin/project/project-list/project-list.component";
-import {ProjectFormComponent} from "./features/admin/project/project-form/project-form.component";
+import {ExperienceFormComponent} from "./features/admin/pages/experience/experience-form/experience-form.component";
+import {ExperienceListComponent} from "./features/admin/pages/experience/experience-list/experience-list.component";
 
 const routes: Routes = [
 
@@ -47,27 +51,25 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin/dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
-  },
+    path: 'admin',
+    component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
+    children: [
 
-  {
-    path: 'admin/projects',
-    component: ProjectListComponent,
-    canActivate: [AuthGuard]
-  },
+      { path: 'dashboard', component: DashboardComponent },
 
-  {
-    path: 'admin/projects/create',
-    component: ProjectFormComponent,
-    canActivate: [AuthGuard]
-  },
+      { path: 'projects', component: ProjectListComponent },
+      { path: 'projects/create', component: ProjectFormComponent },
+      { path: 'projects/edit/:id', component: ProjectFormComponent },
 
-  {
-    path: 'admin/projects/edit/:id',
-    component: ProjectFormComponent,
-    canActivate: [AuthGuard]
+      { path: 'profile', component: ProfileComponent },
+
+      { path: 'experience', component: ExperienceListComponent },
+      { path: 'experience/create', component: ExperienceFormComponent },
+      { path: 'experience/edit/:id', component: ExperienceFormComponent },
+
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
   },
 
   {
