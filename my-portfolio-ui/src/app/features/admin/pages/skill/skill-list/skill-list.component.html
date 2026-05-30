@@ -1,0 +1,117 @@
+<div class="container py-5">
+
+  <div
+    class="d-flex justify-content-between mb-4"
+  >
+
+    <h2 class="text-dark">
+
+      Manage Skills
+
+    </h2>
+
+    <a
+      routerLink="/admin/skills/create"
+      class="btn btn-dark"
+    >
+
+      Add Skill
+
+    </a>
+
+  </div>
+
+  <div class="card p-4 text-dark">
+
+    <table class="table">
+
+      <thead>
+
+      <tr>
+
+        <th>Name</th>
+
+        <th>Percentage</th>
+
+        <th>Category</th>
+
+        <th>Actions</th>
+
+      </tr>
+
+      </thead>
+
+      <tbody>
+
+      <tr
+        *ngFor="
+          let skill of skills
+        "
+      >
+
+        <td>
+
+          {{ skill.name }}
+
+        </td>
+
+        <td>
+
+          {{ skill.percentage }}%
+
+        </td>
+
+        <td>
+
+          {{ skill.category }}
+
+        </td>
+
+        <td>
+
+          <button
+            class="btn btn-primary btn-sm me-2"
+            (click)="editSkill(skill.id!)"
+          >
+
+            Edit
+
+          </button>
+
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteSkill(skill.id!)"
+          >
+
+            Delete
+
+          </button>
+
+        </td>
+
+      </tr>
+
+      <tr
+        *ngIf="
+          skills.length === 0
+        "
+      >
+
+        <td
+          colspan="4"
+          class="text-center"
+        >
+
+          No skills found
+
+        </td>
+
+      </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

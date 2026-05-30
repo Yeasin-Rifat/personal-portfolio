@@ -1,0 +1,220 @@
+<div class="dashboard-page">
+
+  <!-- TOP -->
+
+  <div class="top-section">
+
+    <div>
+
+      <h1>
+
+        Welcome Back 👋
+
+      </h1>
+
+      <p>
+
+        Manage your portfolio easily.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- LOADING -->
+
+  <div
+    *ngIf="loading"
+    class="loading-box"
+  >
+
+    Loading Dashboard...
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div *ngIf="!loading">
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+      <!-- CARD -->
+
+      <div class="stats-card project-card">
+
+        <div class="card-content">
+
+          <h3>
+
+            {{ totalProjects }}
+
+          </h3>
+
+          <p>
+
+            Total Projects
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="stats-card skill-card">
+
+        <div class="card-content">
+
+          <h3>
+
+            {{ totalSkills }}
+
+          </h3>
+
+          <p>
+
+            Total Skills
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="stats-card experience-card">
+
+        <div class="card-content">
+
+          <h3>
+
+            {{ totalExperiences }}
+
+          </h3>
+
+          <p>
+
+            Total Experiences
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="stats-card message-card">
+
+        <div class="card-content">
+
+          <h3>
+
+            {{ totalMessages }}
+
+          </h3>
+
+          <p>
+
+            Messages
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM GRID -->
+
+    <div class="dashboard-grid">
+
+      <!-- RECENT PROJECTS -->
+
+      <div class="dashboard-box">
+
+        <div class="box-header">
+
+          <h2>
+
+            Recent Projects
+
+          </h2>
+
+        </div>
+
+        <div
+          *ngFor="let project of recentProjects"
+          class="dashboard-item"
+        >
+
+          <div>
+
+            <h4>
+
+              {{ project.title }}
+
+            </h4>
+
+            <p>
+
+              {{ project.techStack }}
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RECENT MESSAGES -->
+
+      <div class="dashboard-box">
+
+        <div class="box-header">
+
+          <h2>
+
+            Recent Messages
+
+          </h2>
+
+        </div>
+
+        <div
+          *ngFor="let message of recentMessages"
+          class="dashboard-item"
+        >
+
+          <div>
+
+            <h4>
+
+              {{ message.name }}
+
+            </h4>
+
+            <p>
+
+              {{ message.subject }}
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

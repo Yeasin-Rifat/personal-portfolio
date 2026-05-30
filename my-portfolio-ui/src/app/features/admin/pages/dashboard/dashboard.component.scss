@@ -1,0 +1,265 @@
+.dashboard-page {
+
+  padding: 10px;
+
+}
+
+/* TOP */
+
+.top-section {
+
+  margin-bottom: 30px;
+
+}
+
+.top-section h1 {
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+}
+
+.top-section p {
+
+  color: #6b7280;
+
+  margin-top: 8px;
+
+}
+
+/* LOADING */
+
+.loading-box {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  font-size: 18px;
+
+  color: #111827;
+
+}
+
+/* STATS */
+
+.stats-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+
+}
+
+.stats-card {
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  color: white;
+
+  box-shadow:
+    0 10px 25px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+
+  transition: 0.3s;
+
+}
+
+.stats-card:hover {
+
+  transform: translateY(-5px);
+
+}
+
+.card-content h3 {
+
+  font-size: 42px;
+
+  margin-bottom: 10px;
+
+  font-weight: 700;
+
+  color: white;
+
+}
+
+.card-content p {
+
+  font-size: 16px;
+
+  margin: 0;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  );
+
+}
+
+/* CARD COLORS */
+
+.project-card {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+}
+
+.skill-card {
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #6d28d9
+    );
+
+}
+
+.experience-card {
+
+  background:
+    linear-gradient(
+      135deg,
+      #059669,
+      #047857
+    );
+
+}
+
+.message-card {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ea580c,
+      #c2410c
+    );
+
+}
+
+/* GRID */
+
+.dashboard-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(350px, 1fr)
+    );
+
+  gap: 25px;
+
+}
+
+/* BOX */
+
+.dashboard-box {
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 10px 25px rgba(
+      0,
+      0,
+      0,
+      0.05
+    );
+
+}
+
+/* HEADER */
+
+.box-header {
+
+  margin-bottom: 20px;
+
+}
+
+.box-header h2 {
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+}
+
+/* ITEM */
+
+.dashboard-item {
+
+  padding: 18px 0;
+
+  border-bottom:
+    1px solid #f3f4f6;
+
+}
+
+.dashboard-item:last-child {
+
+  border-bottom: none;
+
+}
+
+.dashboard-item h4 {
+
+  font-size: 17px;
+
+  margin-bottom: 6px;
+
+  color: #111827;
+
+}
+
+.dashboard-item p {
+
+  margin: 0;
+
+  color: #6b7280;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+
+  .top-section h1 {
+
+    font-size: 28px;
+
+  }
+
+}
